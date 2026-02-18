@@ -1,5 +1,6 @@
-import { redirect } from 'next/navigation'
+import SprunksGame from '@/components/sprunki/SprunksGame'
+import '@/styles/sprunks.css'
 
 export default function Home() {
-  redirect('/sprunks')
+  return <SprunksGame />
 }
