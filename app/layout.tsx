@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'SPRUNKS! — Sequenciador Musical',
-  description: 'Jogo musical com personagens customizáveis e fases surpresa',
+  title: 'Signal Kids',
+  description: 'Companheiro de IA para crianças superdotadas e twice-exceptional',
 }
 
 export default function RootLayout({
@@ -12,7 +12,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body style={{ margin: 0, background: '#0f1117', color: '#f0ece2', fontFamily: 'DM Sans, system-ui, sans-serif' }}>
+        {children}
+      </body>
     </html>
   )
 }

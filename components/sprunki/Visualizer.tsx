@@ -14,7 +14,7 @@ export default function Visualizer({ activeCount, totalCount, currentStep, phase
     for (let i = 0; i < bars.length; i++) {
       const b = bars[i] as HTMLDivElement
       b.style.height = `${2 + Math.random() * 25 * int * (beat ? 1.5 : 0.6)}px`
-      b.style.background = `hsl(${(40 + i * 3) % 60},70%,${50 - phaseIndex * 5}%)`
+      b.style.background = `hsl(${(168 + i * 4) % 200},60%,${55 - phaseIndex * 5}%)`
     }
   }, [currentStep, activeCount, totalCount, phaseIndex])
 

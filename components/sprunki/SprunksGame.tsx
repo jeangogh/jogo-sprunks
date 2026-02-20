@@ -85,7 +85,6 @@ export default function SprunksGame() {
 
   function nav(dir: -1 | 1) {
     const t = phaseIdx + dir; if (t < 0 || t >= gameSeq.length) return
-    if (dir > 0 && !completed[phaseIdx]) return
     stopSequencer(); playingRef.current = false; setActiveSet(new Set()); setPhaseIdx(t)
   }
 
@@ -102,7 +101,7 @@ export default function SprunksGame() {
         <StepIndicator currentStep={curStep} />
         <Visualizer activeCount={activeSet.size} totalCount={chars.length} currentStep={curStep} phaseIndex={phaseIdx} />
         <Stage characters={chars} activeSet={activeSet} onToggle={toggle} />
-        <PhaseNav currentPhase={phaseIdx} totalPhases={gameSeq.length} phaseName={cur.config.name} canGoRight={phaseIdx < gameSeq.length - 1 && completed[phaseIdx]} onNavigate={nav} />
+        <PhaseNav currentPhase={phaseIdx} totalPhases={gameSeq.length} phaseName={cur.config.name} canGoRight={phaseIdx < gameSeq.length - 1} onNavigate={nav} />
       </div>
       <TransitionOverlay visible={showTrans} phaseName={transTarget.name} phaseSubtitle={transTarget.sub} isSurprise={transTarget.surprise} />
       <WinScreen visible={showWin} onRestart={restart} />
